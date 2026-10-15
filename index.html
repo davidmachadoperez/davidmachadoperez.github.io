@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David Machado Pérez — Statistical Physics, University of Havana</title>
+<meta name="description" content="David Machado Pérez, Assistant Professor at the Faculty of Physics, University of Havana. Statistical physics of disordered systems, dynamics on random graphs, combinatorial optimization and theoretical ecology.">
+<meta name="author" content="David Machado Pérez">
+<meta property="og:title" content="David Machado Pérez">
+<meta property="og:description" content="Assistant Professor, Faculty of Physics, University of Havana. Statistical physics of disordered systems.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "David Machado Pérez",
+  "jobTitle": "Assistant Professor",
+  "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Havana"},
+  "email": "mailto:david.machado@fisica.uh.cu",
+  "sameAs": [
+    "https://orcid.org/0000-0002-2498-8098",
+    "https://scholar.google.com/citations?user=XD2BGrIAAAAJ&hl=en"
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --ink:#1d2330; --muted:#5d6472; --faint:#8a909b;
+  --line:#e4e1da; --accent:#0b3d91; --accent-soft:#e8eef9; --tag:#f1efe9;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#12151b; --surface:#191d25; --ink:#e7e9ee; --muted:#a6adba; --faint:#7d8594;
+    --line:#2a303b; --accent:#8db1ff; --accent-soft:#1f2a40; --tag:#222833;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;line-height:1.25;margin:0}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:280px 1fr;gap:64px}
+
+/* ---------- sidebar ---------- */
+aside{position:sticky;top:0;align-self:start;padding:56px 0 32px;height:100vh;overflow:auto}
+.avatar{width:148px;height:148px;border-radius:50%;object-fit:cover;display:block;
+  background:var(--accent-soft);border:1px solid var(--line)}
+.avatar-fallback{width:148px;height:148px;border-radius:50%;display:none;align-items:center;justify-content:center;
+  background:var(--accent-soft);color:var(--accent);font:600 46px/1 "Source Serif 4",Georgia,serif;border:1px solid var(--line)}
+aside h1{font-size:28px;margin:22px 0 4px}
+.role{color:var(--muted);font-size:15px;line-height:1.5}
+.role b{color:var(--ink);font-weight:500}
+.links{list-style:none;padding:0;margin:22px 0 0;font-size:14.5px}
+.links li{margin:7px 0;display:flex;gap:10px;align-items:center}
+.links svg{width:16px;height:16px;flex:none;fill:var(--faint)}
+nav.toc{margin-top:28px;border-top:1px solid var(--line);padding-top:18px}
+nav.toc a{display:block;color:var(--muted);font-size:14px;padding:3px 0}
+nav.toc a:hover{color:var(--accent);text-decoration:none}
+.cv-btn{display:inline-block;margin-top:22px;padding:8px 16px;border:1px solid var(--accent);border-radius:6px;font-size:14px;font-weight:500}
+.cv-btn:hover{background:var(--accent);color:var(--bg);text-decoration:none}
+
+/* ---------- main ---------- */
+main{padding:56px 0 80px;min-width:0}
+section{padding:8px 0 36px;scroll-margin-top:24px}
+section+section{border-top:1px solid var(--line);padding-top:36px}
+h2{font-size:26px;margin-bottom:18px}
+h3{font-size:18px;margin:0 0 6px}
+p{margin:0 0 14px}
+.lead{font-size:17.5px;color:var(--ink)}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin:22px 0 4px}
+.stat b{display:block;font:600 28px/1 "Source Serif 4",Georgia,serif;color:var(--accent)}
+.stat span{font-size:13px;color:var(--muted)}
+
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0;padding:0;list-style:none}
+.tags li{background:var(--tag);border-radius:999px;padding:3px 12px;font-size:13.5px;color:var(--muted)}
+
+.news{list-style:none;padding:0;margin:0}
+.news li{display:grid;grid-template-columns:92px 1fr;gap:14px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.news li:last-child{border-bottom:0}
+.news time{color:var(--faint);font-size:14px;font-variant-numeric:tabular-nums}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin-bottom:16px}
+.card .meta{font-size:13.5px;color:var(--faint);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+
+.themes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.themes .card{margin:0}
+.themes p{font-size:15px;color:var(--muted);margin:0}
+
+ol.pubs{list-style:none;padding:0;margin:0;counter-reset:p}
+ol.pubs li{position:relative;padding:12px 0 12px 44px;border-bottom:1px solid var(--line)}
+ol.pubs li:last-child{border-bottom:0}
+ol.pubs li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:13px;
+  font:600 14px/1.6 Inter,sans-serif;color:var(--faint);font-variant-numeric:tabular-nums}
+.pt{font-weight:600;color:var(--ink)}
+a.pt{color:var(--ink)}
+a.pt:hover{color:var(--accent)}
+.pa{font-size:14.5px;color:var(--muted)}
+.pa b{color:var(--ink);font-weight:600}
+.pj{font-size:14.5px}
+.pj i{color:var(--ink)}
+.badge{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  padding:1px 8px;border-radius:4px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:2px}
+.year{font-family:"Source Serif 4",Georgia,serif;font-size:15px;color:var(--faint);margin:22px 0 2px;font-weight:600}
+.year:first-of-type{margin-top:0}
+
+.students{list-style:none;padding:0;margin:0}
+.students li{padding:12px 0;border-bottom:1px solid var(--line)}
+.students li:last-child{border-bottom:0}
+.students .who{font-weight:600}
+.students .lvl{font-size:13px;color:var(--faint);margin-left:6px}
+.students .tt{font-size:14.5px;color:var(--muted)}
+
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cols .card{margin:0}
+ul.plain{margin:0;padding-left:18px}
+ul.plain li{margin:3px 0}
+
+.cta{background:var(--accent-soft);border-radius:10px;padding:20px 22px}
+footer{font-size:13px;color:var(--faint);padding-top:20px;border-top:1px solid var(--line)}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;gap:0;padding:0 16px}
+  aside{position:static;height:auto;padding:36px 0 8px;overflow:visible}
+  .avatar,.avatar-fallback{width:112px;height:112px;font-size:36px}
+  nav.toc{display:none}
+  main{padding-top:24px}
+  .themes,.cols{grid-template-columns:1fr}
+  .news li{grid-template-columns:80px 1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ================= SIDEBAR ================= -->
+<aside>
+  <img class="avatar" src="photo.jpg" alt="David Machado Pérez"
+       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <div class="avatar-fallback" aria-hidden="true">DM</div>
+
+  <h1>David Machado Pérez</h1>
+  <div class="role"><b>Assistant Professor</b><br>Center for Complex Systems<br>Faculty of Physics, University of Havana</div>
+
+  <ul class="links">
+    <li><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+      <a href="mailto:david.machado@fisica.uh.cu">david.machado@fisica.uh.cu</a></li>
+    <li><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm-7 9.2v4L12 20l7-3.8v-4L12 16l-7-3.8z"/></svg>
+      <a href="https://scholar.google.com/citations?user=XD2BGrIAAAAJ&amp;hl=en">Google Scholar</a></li>
+    <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM8.3 17.3H6.6V8.9h1.7v8.4zM7.4 7.8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 5.3c0 2.6-1.8 4.2-4.3 4.2H10V8.9h3.2c2.6 0 4.2 1.7 4.2 4.2zm-1.7 0c0-1.7-1-2.8-2.7-2.8h-1.4v5.6H13c1.6 0 2.7-1.1 2.7-2.8z"/></svg>
+      <a href="https://orcid.org/0000-0002-2498-8098">ORCID 0000-0002-2498-8098</a></li>
+    <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      <span class="muted">San Lázaro y L, Vedado, La Habana, Cuba</span></li>
+  </ul>
+
+  <a class="cv-btn" href="David_Machado_Perez_CV.pdf">Download CV (PDF)</a>
+
+  <nav class="toc" aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#news">News</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#teaching">Teaching &amp; students</a>
+    <a href="#talks">Selected talks</a>
+    <a href="#service">Service &amp; awards</a>
+  </nav>
+</aside>
+
+<!-- ================= MAIN ================= -->
+<main>
+
+<section id="about">
+  <h2>About</h2>
+  <p class="lead">I am a theoretical physicist working on the statistical physics of disordered systems. I study how systems of many interacting units (spins, algorithms, epidemics, opinions, species) evolve in time when they live on sparse random graphs, and I develop local, cavity-based approximations that make this dynamics tractable.</p>
+  <p>I am an Assistant Professor at the Faculty of Physics of the University of Havana, where I work in the Center for Complex Systems. I received my PhD from the University of Havana in 2024 under the supervision of Dr.&nbsp;Roberto Mulet. My thesis was awarded the prize for the best doctoral thesis in Natural Sciences in Cuba. From 2024 to 2026 I was a postdoctoral researcher at Sapienza University of Rome, in the Statistical Mechanics and Complexity group.</p>
+  <ul class="tags" aria-label="Research interests">
+    <li>Statistical physics</li><li>Disordered systems</li><li>Complex systems</li>
+    <li>Dynamics on random graphs</li><li>Combinatorial optimization</li><li>Theoretical ecology</li>
+  </ul>
+  <div class="stats">
+    <div class="stat"><b>15</b><span>publications</span></div>
+    <div class="stat"><b>100</b><span>citations</span></div>
+    <div class="stat"><b>7</b><span>h-index</span></div>
+    <div class="stat"><b>4</b><span>theses supervised</span></div>
+  </div>
+  <p class="small muted" style="margin-top:6px">Citation data from Google Scholar, October 2026.</p>
+</section>
+
+<section id="news">
+  <h2>News</h2>
+  <ul class="news">
+    <li><time>2026</time><span>Our project <b>RISE: Reconstructing Interactions in Sparse Ecosystems</b>, with M.&nbsp;Negri (CY Cergy Paris Université) and P.&nbsp;Valigi (University of Bath), was selected in the CNRS International Research Projects call. It runs from 2027 to 2029.</span></li>
+    <li><time>2026</time><span>I joined the Scientific Council of the University of Havana.</span></li>
+    <li><time>2026</time><span>Alejandro Castro Cabrera defended his Master's thesis on opinion dynamics with heterophobic interactions.</span></li>
+    <li><time>2026</time><span>Published: <a href="https://doi.org/10.21468/SciPostPhys.21.1.008">local equations for the generalized Lotka–Volterra model</a> in SciPost Physics, and <i>algorithmic thresholds in combinatorial optimization</i> in Physical Review X.</span></li>
+    <li><time>06/2026</time><span>I finished my postdoc at Sapienza University of Rome and returned to the University of Havana.</span></li>
+    <li><time>2025</time><span>Published: <a href="https://doi.org/10.1073/pnas.2510153122">local equations describe unreasonably efficient stochastic algorithms in random K-SAT</a> in PNAS.</span></li>
+  </ul>
+</section>
+
+<section id="research">
+  <h2>Research</h2>
+  <div class="themes">
+    <div class="card">
+      <h3>Dynamics on sparse random graphs</h3>
+      <p>Cavity master equations, local closures and dynamic cavity methods for continuous-time stochastic dynamics of discrete variables, including Ising models, epidemics and glassy relaxation.</p>
+    </div>
+    <div class="card">
+      <h3>Algorithms for hard optimization</h3>
+      <p>Local equations that describe stochastic local-search algorithms in random K-SAT, algorithmic thresholds and their time scaling, belief propagation, and benchmarks for graph neural networks.</p>
+    </div>
+    <div class="card">
+      <h3>Theoretical ecology</h3>
+      <p>The generalized Lotka–Volterra model on sparse, asymmetric interaction networks, using Local Fokker–Planck equations to infer species interactions from data.</p>
+    </div>
+    <div class="card">
+      <h3>Social and biological networks</h3>
+      <p>Opinion dynamics and consensus formation under heterophobic interactions, and message-passing models of neural activity in <i>C.&nbsp;elegans</i>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card">
+    <div class="meta">CNRS International Research Project · 2027–2029 · Co-leader</div>
+    <h3>RISE: Reconstructing Interactions in Sparse Ecosystems</h3>
+    <p class="small" style="margin:8px 0 0">This is a collaboration between the LPTM at CY Cergy Paris Université (project leader Dr.&nbsp;Matteo Negri), the Department of Mathematical Sciences at the University of Bath (Dr.&nbsp;Pietro Valigi) and the Faculty of Physics of the University of Havana. We adapt Local Fokker–Planck equations, pseudo-likelihood learning and graph neural networks to infer sparse, asymmetric interactions in ecosystems, both from synthetic data and from experimental data. The project funds researcher and student mobility, and a postgraduate student from Havana will be co-supervised in Havana and Paris.</p>
+  </div>
+  <div class="card">
+    <div class="meta">PRIN 2022 PNRR (Italy) · 2024–2026 · Postdoctoral researcher</div>
+    <h3>When deep learning is not enough</h3>
+    <p class="small" style="margin:8px 0 0">The project's full title is "When deep learning is not enough: creating hard benchmarks and physics-inspired algorithms for combinatorial optimization problems." It was hosted at Sapienza University of Rome.</p>
+  </div>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <p class="small muted">An up-to-date list with citation counts is on <a href="https://scholar.google.com/citations?user=XD2BGrIAAAAJ&amp;hl=en">Google Scholar</a>. <sup>†</sup>&nbsp;marks a student I supervised.</p>
+  <ol class="pubs">
+    <li><a class="pt" href="https://arxiv.org/abs/2602.18419">Benchmarking graph neural networks in solving hard constraint satisfaction problems</a><span class="badge">preprint</span><br>
+      <span class="pa">G. Skenderi, L. Buffoni, F. D'Amico, <b>D. Machado</b>, R. Marino, M. Negri, F. Ricci-Tersenghi, C. Lucibello, M. C. Angelini</span><br>
+      <span class="pj"><i>arXiv:2602.18419</i> (2026)</span></li>
+    <li><a class="pt" href="https://www.revistacubanadefisica.org/index.php/rcf/article/view/103">Belief propagation with informed initialization in combinatorial optimization problems</a><br>
+      <span class="pa"><b>D. Machado</b>, R. Mulet, A. Pérez</span><br>
+      <span class="pj"><i>Revista Cubana de Física</i> 43(1), 4–12 (2026)</span></li>
+    <li><a class="pt" href="https://doi.org/10.21468/SciPostPhys.21.1.008">Local equations for the generalized Lotka–Volterra model on sparse asymmetric graphs</a><br>
+      <span class="pa"><b>D. Machado</b>, P. Valigi, T. Tonolo, M. C. Angelini</span><br>
+      <span class="pj"><i>SciPost Physics</i> 21, 008 (2026)</span> · <a class="small" href="https://arxiv.org/abs/2511.17499">arXiv</a></li>
+    <li><span class="pt">Algorithmic thresholds in combinatorial optimization depend on the time scaling</span><br>
+      <span class="pa">M. C. Angelini, M. Avila-González<sup>†</sup>, F. D'Amico, <b>D. Machado</b>, R. Mulet, F. Ricci-Tersenghi</span><br>
+      <span class="pj"><i>Physical Review X</i> 16, 011045 (2026)</span></li>
+    <li><a class="pt" href="https://doi.org/10.1073/pnas.2510153122">Local equations describe unreasonably efficient stochastic algorithms in random K-SAT</a><br>
+      <span class="pa"><b>D. Machado</b>, J. González-García, R. Mulet</span><br>
+      <span class="pj"><i>Proceedings of the National Academy of Sciences</i> 122(49), e2510153122 (2025)</span></li>
+    <li><span class="pt">Heterophobic interactions hinder consensus formation in sparse random networks</span><br>
+      <span class="pa">A. Castro<sup>†</sup>, T. M. Pham, E. Ortega, <b>D. Machado</b></span><br>
+      <span class="pj"><i>Physical Review E</i> 112, 064309 (2025)</span></li>
+    <li><span class="pt">Dynamic cavity method in fully-asymmetric models</span><br>
+      <span class="pa">J. González-García, <b>D. Machado</b></span><br>
+      <span class="pj"><i>Revista Cubana de Física</i> 42(1), 12–19 (2025)</span></li>
+    <li><span class="pt">Improved mean-field dynamical equations are able to detect the two-step relaxation in glassy dynamics at low temperatures</span><br>
+      <span class="pa"><b>D. Machado</b>, R. Mulet, F. Ricci-Tersenghi</span><br>
+      <span class="pj"><i>Journal of Statistical Mechanics: Theory and Experiment</i> 2023, 123301 (2023)</span></li>
+    <li><span class="pt">A closure for the master equation starting from the dynamic cavity method</span><br>
+      <span class="pa">E. Aurell, <b>D. Machado</b>, R. Mulet</span><br>
+      <span class="pj"><i>Journal of Physics A: Mathematical and Theoretical</i> 56, 17LT02 (2023)</span></li>
+    <li><span class="pt">Modeling the neural activity of <i>Caenorhabditis elegans</i> through neural message passing</span><br>
+      <span class="pa">Y. Hernández-Hernández<sup>†</sup>, <b>D. Machado</b>, R. Mulet</span><br>
+      <span class="pj"><i>Revista Cubana de Física</i> 40(1), 39 (2023)</span></li>
+    <li><a class="pt" href="https://doi.org/10.1103/PhysRevE.105.024308">Dynamics of epidemics from cavity master equations: susceptible-infectious-susceptible models</a><br>
+      <span class="pa">E. Ortega, <b>D. Machado</b>, A. Lage-Castellanos</span><br>
+      <span class="pj"><i>Physical Review E</i> 105, 024308 (2022)</span></li>
+    <li><a class="pt" href="https://doi.org/10.1103/PhysRevE.104.054303">From random point processes to hierarchical cavity master equations for stochastic dynamics of disordered systems in random graphs: Ising models and epidemics</a><br>
+      <span class="pa"><b>D. Machado</b>, R. Mulet</span><br>
+      <span class="pj"><i>Physical Review E</i> 104, 054303 (2021)</span></li>
+    <li><span class="pt">The cavity master equation: average and fixed point of the ferromagnetic model in random graphs</span><br>
+      <span class="pa">E. Domínguez, <b>D. Machado</b>, R. Mulet</span><br>
+      <span class="pj"><i>Journal of Statistical Mechanics: Theory and Experiment</i> 2020, 073304 (2020)</span></li>
+    <li><a class="pt" href="https://doi.org/10.1103/PhysRevLett.123.230602">Theory of non-equilibrium local search on random satisfaction problems</a><br>
+      <span class="pa">E. Aurell, E. Domínguez, <b>D. Machado</b>, R. Mulet</span><br>
+      <span class="pj"><i>Physical Review Letters</i> 123, 230602 (2019)</span></li>
+    <li><a class="pt" href="https://doi.org/10.1103/PhysRevE.97.050103">Exploring the diluted ferromagnetic p-spin model with a cavity master equation</a><br>
+      <span class="pa">E. Aurell, E. Domínguez, <b>D. Machado</b>, R. Mulet</span><br>
+      <span class="pj"><i>Physical Review E</i> 97, 050103(R) (2018)</span></li>
+  </ol>
+</section>
+
+<section id="teaching">
+  <h2>Teaching &amp; students</h2>
+  <div class="cols">
+    <div class="card">
+      <div class="meta">University of Havana · since 2017</div>
+      <h3>Courses</h3>
+      <p class="small" style="margin:6px 0 4px"><b>Current (2026–27):</b> Differential Equations; Complex Variables.</p>
+      <p class="small muted" style="margin:0">Previously: Analytic Geometry, Algebra, Mathematical Analysis, Ordinary Differential Equations, and Mathematical Methods of Physics II (second-order PDEs). In 2020–21 the students voted me best professor of the Faculty.</p>
+    </div>
+    <div class="card">
+      <div class="meta">Sapienza University of Rome · 2024, 2025</div>
+      <h3>Fisica Computazionale</h3>
+      <p class="small muted" style="margin:6px 0 0">I taught the laboratory sessions of the Computational Physics course in each of the two academic years of my postdoc.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:28px">Theses supervised</h3>
+  <ul class="students">
+    <li><span class="who">Alejandro Castro Cabrera</span><span class="lvl">M.Sc. · 2026</span><br>
+      <span class="tt">Opinion dynamics on random graphs: heterophobic interactions and the viability of consensus. The results were published in Phys.&nbsp;Rev.&nbsp;E.</span></li>
+    <li><span class="who">Martín Avila González</span><span class="lvl">M.Sc. · 2025 · co-supervised with R. Mulet</span><br>
+      <span class="tt">Algorithmic thresholds in the random K-SAT ensemble: Simulated Annealing as a function of the time scaling. The results were published in Phys.&nbsp;Rev.&nbsp;X.</span></li>
+    <li><span class="who">Martín Avila González</span><span class="lvl">Licenciatura · 2023 · co-supervised with R. Mulet</span><br>
+      <span class="tt">Modeling local-search algorithms for K-SAT: Simulated Annealing and WalkSAT.</span></li>
+    <li><span class="who">Yeslaine Hernández Hernández</span><span class="lvl">Licenciatura · 2022 · co-supervised with R. Mulet</span><br>
+      <span class="tt">Modeling the neural activity of <i>C.&nbsp;elegans</i> with message-passing algorithms. The results were published in Rev.&nbsp;Cubana&nbsp;Fís.</span></li>
+  </ul>
+
+  <div class="cta" style="margin-top:22px">
+    <h3>Prospective students</h3>
+    <p class="small" style="margin:6px 0 0">I am looking for motivated Licenciatura and Master's students at the University of Havana who are interested in statistical physics, algorithms or theoretical ecology. RISE includes a postgraduate position with research stays in Paris. <a href="mailto:david.machado@fisica.uh.cu">Write to me</a> with a short note about your interests.</p>
+  </div>
+</section>
+
+<section id="talks">
+  <h2>Selected talks</h2>
+  <ul class="news">
+    <li><time>2026</time><span>International School on Statistical Inference from Biological Data, University of Havana (oral contribution)</span></li>
+    <li><time>2025</time><span>STATPHYS29, the 29th International Conference on Statistical Physics, Florence (oral contribution)</span></li>
+    <li><time>2025</time><span>Seminar at Sapienza University of Rome: "Approximate master equations for algorithmic dynamics in hard combinatorial optimization"</span></li>
+    <li><time>2025</time><span>Workshop "Towards a theory for typical-case algorithmic hardness", Les Houches (short talk and poster)</span></li>
+    <li><time>2024</time><span>3rd International School of the Italian Society of Statistical Physics, Catania (flash talk)</span></li>
+    <li><time>2023</time><span>Seminar at the Complexity Science Hub, Vienna: "Two approximate approaches to the continuous-time dynamics of discrete variables in random graphs"</span></li>
+    <li><time>2022</time><span>Seminar at Sapienza University of Rome: "Dynamic cavity method for the continuous time: Ising models, epidemics and local-search algorithms"</span></li>
+    <li><time>2018</time><span>Seminar at NORDITA, Stockholm: "Cavity master equation applied to the diluted ferromagnetic p-spin"</span></li>
+  </ul>
+</section>
+
+<section id="service">
+  <h2>Service &amp; awards</h2>
+  <div class="cols">
+    <div class="card">
+      <h3>Service</h3>
+      <ul class="plain small">
+        <li>Member of the Scientific Council of the University of Havana (since 2026)</li>
+        <li>Substitute member of the Scientific Council of the Faculty of Physics</li>
+        <li>Referee for <i>Physical Review E</i>, <i>Physical Review Research</i> and <i>Revista Cubana de Física</i></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Selected awards</h3>
+      <ul class="plain small">
+        <li>Award of the Cuban National Academy of Sciences (2025)</li>
+        <li>Best Doctoral Thesis in Natural Sciences in Cuba, Ministry of Higher Education (2024)</li>
+        <li>Distinguished Young Professor and Researcher, University of Havana (2024)</li>
+        <li>Golden Diploma, top of the class, University of Havana (2019)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 David Machado Pérez · Last updated October 2026</footer>
+</main>
+</div>
+</body>
+</html>
